@@ -185,13 +185,14 @@ const Hero = () => {
             {[
               { icon: FaGithub, href: 'https://github.com/locifer18', color: '#6366f1' },
               { icon: FaLinkedin, href: 'https://linkedin.com/in/ansh-kanda-75995a244', color: '#8b5cf6' },
-              { icon: FaDownload, href: '', color: '#8b5cf6' },
+              { icon: FaDownload, href: '/resume.pdf', color: '#8b5cf6', download: true },
             ].map((social, index) => (
               <motion.a
                 key={index}
                 href={social.href}
-                target="_blank"
+                target={social.download ? '_self' : '_blank'}
                 rel="noopener noreferrer"
+                download={social.download ? 'Ansh_Resume.pdf' : undefined}
                 whileHover={{
                   scale: 1.5,
                   rotateY: 360,
